@@ -112,11 +112,12 @@ function drawAll(){
 
 // check if our char has the same location as the sprite
 function impact(){
-    if((charX + charWidth) >= x && (charX + charWidth <= x + spriteWidth) && (charY + charHeight) >= y && (charY + charHeight <= y + spriteHeight)){
+    // if our character shares coordinates with the sprite (not a perfect solution, needs to be fine-tuned)
+    if((charX + charWidth) >= x && (charX <= x + spriteWidth) && (charY + charHeight) >= y && (charY + charHeight <= y + spriteHeight)){
         // change the background color to show impact
         canvas.style.backgroundColor = `#${Math.ceil((Math.random()*1000000))}`
     }
 }
 
 // calling a JavaScript library function which recalls another function every number of ms
-setInterval(drawAll, 10);
+setInterval(drawAll, 100);
